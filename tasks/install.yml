@@ -1,5 +1,8 @@
 # tasks file
 ---
+- name: add percona 8 repo
+  command: wget -O percona_all.deb https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb
+
 - name: install | configure debconf
   debconf:
     name: "{{ item.name }}"
